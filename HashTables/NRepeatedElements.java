@@ -17,6 +17,8 @@
 // Input: [5,1,5,2,5,3,5,4]
 // Output: 5
 
+import java.util.*;
+
 class Solution {
     public int repeatedNTimes(int[] A) {
         // Create a hashmap
