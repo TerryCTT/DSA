@@ -19,6 +19,9 @@
 // runtime: O(n*k) where n is the amount of numbers between left and right
 //                 and k is the length of right
 // space: O(n) where n is the number of digits that self divide (at most n)
+
+import java.util.*;
+
 class Solution {
     public List<Integer> selfDividingNumbers(int left, int right) {
         // 1. iterate through numbers starting with left and ending with right
