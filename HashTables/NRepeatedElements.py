@@ -17,6 +17,9 @@
 # Input: [5,1,5,2,5,3,5,4]
 # Output: 5
 
+# runtime: O(n+1) all unique elements are itereated before repeatß
+# space: O(n+1) all unique elements stored in hash table before hitting repeat
+
 class Solution(object):
     def repeatedNTimes(self, A):
         """
