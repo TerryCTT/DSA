@@ -28,7 +28,7 @@
 // Only one valid answer exists.
  
 
-// Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+// Follow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?
 
 // Topics: Array, Hash Table
 
@@ -36,7 +36,7 @@
 
 // Intuition:
 // We can solve naively by checking each element in nums against all other elements in nums and see if their sum is equal to target. This would be O(n^2) time complexity.
-// We can improve on this by instead checking only once for each element in nums by calculating the difference between target and the element and seeing if that difference exists in the array. To check this difference in constant time we would have to use a hashmap
+// We can improve on this by instead checking only once for each element in nums by calculating the difference between target and the element and seeing if that difference exists in the array. To check this difference in O(1) constant time we would have to use a hashmap
 
 import java.util.*;
 
