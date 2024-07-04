@@ -33,6 +33,41 @@
 
 # =====================================================================================
 
+# More efficient solution with O(m*n)
+
+# Intuition
+# Anagrams will have the same number of letters. We can group each string within the array that have the same counts.
+
+class Solution: 
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]: 
+        # Approach:
+        # (1) Create a hashmap to help group our anagrams 
+        # (2) Iterate through list of strings and count string's letters
+        #    (a) Words that are anagrams will have the same letter counts
+        #    (b) Create an array that will hold counts of letters for our strings
+        #    (c) We keep track of our anagrams and group them together by using our hashmap
+        #       (i) Key: array of letter counts, Value: List of original unsorted strings that share same letter counts
+        #       (ii) Append current list at key with current unsorted string's letter count, at that letter count's value
+        # (3) Return hashmap's values as list of grouped anagrams
+
+        # time complexity: O(n * m). 
+        #   n is the number of strings in our list
+        #   m is the number of characters in longest string
+        # space complexity: O(n). Our list of list of strings is dependent on number of strings given as input, and same with hashmap.
+
+        letterCounts = defaultdict(list) # (1) default values will have empty list
+
+        for word in strs: # (2)
+            letters = [0] * 26 # (b)
+            for letter in word:
+               letters[ord(letter) - ord('a')] += 1
+            letterCounts[tuple(letters)].append(word) # (ii) tuple since python does not allow list as key for hashmap
+
+        return letterCounts.values() # (3)
+
+
+# Original solution (less efficient) with O(n * mlogm + k) 
+
 # Intuition:
 # Anagrams will have the same form once they are sorted. We can sort each string within the array and group
 # identical strings. 
